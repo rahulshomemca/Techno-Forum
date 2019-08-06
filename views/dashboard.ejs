@@ -1,0 +1,27 @@
+<div class="container pt-2">
+    <div class="row mt-5">
+        <% if(typeof questions != 'undefined'){ %>
+            <% questions.forEach(function(question) { %>
+                <div class="col-md-9 m-auto">
+                    <% include ./partials/messages %>
+                    <div class="shadow-sm border p-4 mb-3 bg-white text-secondary rounded-lg">
+                        <a href="/reply/<%=question._id%>" class="text-secondary"><h5>Q : <%= question.question %></h5></a>
+                        <p class="text-success">Catagory : <%= question.catagory %></p>
+                        <a href="user/<%=question.user_id%>" class="text-info"><span class="text-info">By : <%= question.user_name%> </span></a>
+                        <span class="text-info">
+                            , View : <%= question.views%> ,
+                            Answer : <%= question.answer%>
+                        </span>
+                    </div>
+                </div>
+            <% }); %> 
+        <% } %>
+        <% if(questions.length == 0){ %>
+            <div class="col-md-8 m-auto">
+                <div class="shadow-sm p-4 mb-3 bg-white text-secondary rounded-lg">
+                    <b>Not Found...</b>
+                </div>
+            </div>
+        <% } %> 
+    </div>
+</div>

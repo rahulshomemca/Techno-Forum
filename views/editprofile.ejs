@@ -1,0 +1,130 @@
+<div class="container mt-5">
+<% include ./partials/messages %>
+<div class="row">
+    <div class="col-md-4">
+        <div class="shadow-sm border p-4 mb-4 bg-white text-center text-secondary rounded-lg profile">
+            <img src="/uploads/<%= user.profile_image %>" class="mx-auto d-block rounded-circle" width="250" height="250">
+            <!-- <button class="btn btn-outline-info mt-4" data-toggle="modal" data-target="#ImageModal">Change Image</button> -->
+            <p><h3><strong><%= user.name %></strong></h3></p>
+            <!-- Image Modal -->
+            <div class="modal" id="ImageModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Update Profile Image</h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form action="/change_image" enctype="multipart/form-data" method="POST">
+                                <p>Please Upload Square image for best View</p>
+                                <input type="file" name="profile_image"><input type="submit" value="Update" class="btn btn-success btn-block mt-4">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+            <div class="shadow-sm border p-4 mb-4 bg-white text-secondary rounded-lg profile">
+            <form action="/editprofile" method="POST">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input
+                    type="text"
+                    id="firstname"
+                    name="firstname"
+                    class="form-control"
+                    placeholder="Enter First Name"
+                    value="<%= user.firstname %>"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    class="form-control"
+                    placeholder="Enter Last Name"
+                    value="<%= user.lastname %>"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter Email"
+                    value="<%= user.email %>"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input
+                    type="text"
+                    id="mobile"
+                    name="mobile"
+                    class="form-control"
+                    placeholder="Enter Mobile Number"
+                    value="<%= user.mobile %>"
+                    />
+                </div>
+                <button type="submit" class="btn btn-info btn-block">
+                    Update Profile Details
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="shadow-sm border p-4 mb-4 bg-white text-secondary rounded-lg profile">
+            
+            <form action="/changepassword" method="POST">
+                <div class="form-group">
+                    <label for="password">Current Password</label>
+                    <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Enter Current Password"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="newpassword">New Password</label>
+                    <input
+                    type="password"
+                    id="newpassword"
+                    name="newpassword"
+                    class="form-control"
+                    placeholder="Enter New Password"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="newpassword2">Confirm Current Password</label>
+                    <input
+                    type="password"
+                    id="newpassword2"
+                    name="newpassword2"
+                    class="form-control"
+                    placeholder="Confirm New Password"
+                    />
+                </div>
+                <button type="submit" class="btn btn-info btn-block">
+                    Change Password
+                </button>
+                <br>
+                <a href="/deleteacc" class="btn btn-danger btn-block">Delete Account With All Details</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>

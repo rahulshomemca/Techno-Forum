@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-9 m-auto">
+            <% include ./partials/messages %>
+            <div class="shadow-sm border p-4 mb-4 bg-white text-secondary rounded-lg">
+                <form action="/updatequestion" method="POST">
+                    <div class="form-group">
+                        <label for="question">Your Question</label>
+                        <input
+                        type="text"
+                        id="question"
+                        name="question"
+                        value="<%=data.question%>"
+                        class="form-control"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="catagory">Choose Catagory</label>
+                        <input
+                        type="text"
+                        id="catagory"
+                        name="catagory"
+                        class="form-control"
+                        value="<%=data.catagory%>"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Write Your Description</label>
+                        <textarea rows="5" cols="50" class="form-control" name="description"><%=data.description%></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="code">Write Your Code</label>
+                        <textarea rows="10" cols="50" class="form-control" name="code"><%=data.code%></textarea>
+                    </div>
+                    <input type="hidden" name="id" value="<%=data._id%>">
+                    <button type="submit" class="btn btn-info btn-block">
+                        Update Question
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

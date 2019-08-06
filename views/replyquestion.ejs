@@ -1,0 +1,35 @@
+<div class="container pt-2">
+    <div class="row mt-5">
+        <div class="col-md-9 m-auto">
+            <div class="shadow-sm border p-4 mb-3 bg-white text-info rounded-lg">
+                <h4>Q : <%= data.question%></h4>
+                <% if(data.description.length > 0){ %>
+                    <p class="text-info pt-2">Description :</p>
+                    <div class="bg-light p-4 border text-info"><%= data.description%></div>
+                <% } %>
+                <% if(data.code.length > 0){ %>
+                    <p class="text-info pt-2">Code :</p>
+                    <pre class="bg-light p-4 border text-success"><%= data.code%></pre>
+                <% } %>
+            </div>
+            <% include ./partials/messages %>
+            <div class="shadow-sm border p-4 mb-3 bg-white text-info rounded-lg">
+                <form action="/replyquestion" method="POST">
+                    <div class="form-group">
+                        <label for="answer">Write Your Answer : </label>
+                        <textarea rows="5" cols="50" class="form-control" name="answer"><%= typeof answer != 'undefined' ? answer : '' %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="code">Write Your Code :</label>
+                        <textarea rows="10" cols="50" class="form-control" name="code"><%= typeof code != 'undefined' ? code : '' %></textarea>
+                    </div>
+                    <input type="hidden" value="<%= data._id%>" name="question_id">
+                    <input type="hidden" value="<%= data.question%>" name="question">
+                    <button type="submit" class="btn btn-info btn-block">
+                        Post Answer
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

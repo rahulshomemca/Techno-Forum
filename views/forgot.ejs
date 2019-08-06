@@ -1,0 +1,21 @@
+<div class="row mt-5">
+  <div class="col-md-4 m-auto">
+    <div class="shadow-sm border p-4 mb-4 bg-white rounded-lg">
+      <% include ./partials/messages %>
+      <p class="text-secondary">Enter your Email address to reset password</p>
+      <form action="/getlink" method="POST">
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+          />
+        </div>
+        <button type="submit" class="btn btn-info btn-block">Get Reset Link</button>
+      </form>
+    </div>
+  </div>
+</div>

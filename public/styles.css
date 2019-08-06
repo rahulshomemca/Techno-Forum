@@ -1,0 +1,237 @@
+body {
+  background-color: powderblue;
+}
+
+.profile {
+  height: 95%;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+
+.front-img {
+	background-image: url('https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwig1Yziw7rhAhXi_XMBHS0qCsUQjRx6BAgBEAU&url=https%3A%2F%2Flifehacker.com%2Fthis-extension-will-track-the-cost-of-your-mindless-web-1818985777&psig=AOvVaw04fIEjn9AwVZIHsU9aVgyF&ust=1554607831555491');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	width: 100%;
+	height: 760px;
+}
+
+.headerset {
+	padding-top: 200px;
+	box-sizing: border-box;
+}
+
+.headerset h1 {
+	font-size: 90px;
+}
+
+.headerset h2 {
+	font-size: 36px;
+}
+
+.ourservice {
+	padding : 100px 0px 80px;
+	height : 650px;
+	box-sizing: border-box;
+
+}
+
+.portfolio {
+	padding : 100px 0px 0px;
+	height: 760px;
+	box-sizing: border-box;
+}
+
+.team {
+	padding : 100px 0px 70px;
+	box-sizing: border-box;
+}
+
+.testimonial {
+	padding : 100px 0px 70px;
+	box-sizing: border-box;
+}
+
+.latest {
+	padding : 100px 0px 60px;
+	box-sizing: border-box;
+}
+
+.help {
+	padding: 50px 0px 50px;
+}
+
+.rowsetting {
+	margin: 50px 0px;
+}
+
+.imgsetting {
+	border-radius: 50%;
+	height: 130px;
+	width: 130px;
+}
+
+.fa-shopping-cart {
+	padding-top: 30px;
+}
+
+.fa-laptop {
+	padding-top: 30px;
+}
+
+.fa-internet-explorer {
+	padding-top: 30px;
+}
+
+
+.rowsetting p {
+	color: #8c8c8c;
+}
+
+.portfolio-con p {
+	color: #8c8c8c;
+}
+
+
+.testimonial-con p {
+	color: #8c8c8c;
+}
+
+.pf1 {
+	margin-top: 70px;
+}
+
+.pf2 {
+	margin-top: 30px; 
+}
+
+.pf1 p {
+	color: #8c8c8c;
+}
+
+.pf2 p {
+	color: #8c8c8c;
+}
+
+
+.team p {
+	color: #8c8c8c;
+}
+
+
+.team-row {
+	margin-top: 50px;
+}
+
+.testimonial-row {
+	margin-top: 50px;
+}
+
+
+.footer {
+	height: 100px;
+}
+
+.footer h6 {
+	line-height: 100px;
+	color: white;
+}
+
+.ourservice p {
+	color: #8c8c8c;
+}
+
+.latest-p p {
+	color : #a6a6a6;
+}
+
+
+.men strong {
+	padding-left: 20px;
+}
+
+.latest {
+	background-color: #e6f2ff;
+}
+
+.portfolio {
+	background-color: #e6f2ff;
+}
+
+
+@media(min-width: 992px){
+	.ourservice {
+		height: 730px;
+	}
+	.portfolio {
+		height: 800px;
+	}
+}
+
+@media(min-width: 768px) and (max-width: 991px){
+	.headerset h1 {
+		font-size: 70px;
+	}
+	.ourservice {
+		height: 800px;
+	}
+	.portfolio {
+		height: 700px;
+	}
+
+	.rowsetting h2 {
+		font-size: 22px;
+	}
+	.testimonial-row h4 {
+		font-size: 20px;
+	}
+}
+
+@media(min-width: 575px) and (max-width: 767px){
+	.headerset h1 {
+	font-size: 70px;
+	}
+	.ourservice {
+		height: 1380px;
+	}
+	.portfolio {
+		height: 3770px;
+	}
+}
+
+@media(min-width: 480px) and (max-width: 574px){
+	.headerset h1 {
+		font-size: 60px;
+	}
+
+	.ourservice {
+		height: 1300px;
+	}
+	.portfolio {
+		height: 2550px;
+	}
+	.footer h6 {
+		font-size: 12px;
+	}
+}
+
+@media(max-width: 479px){
+
+	.headerset {
+		padding-top: 180px;
+		box-sizing: border-box;
+	}
+	.headerset h1 {
+	font-size: 60px;
+	}
+	.headerset h2 {
+		font-size: 18px;
+	}
+	.ourservice {
+		height: 1380px;
+	}
+	.portfolio {
+		height: 2500px;
+	}
+}

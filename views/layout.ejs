@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/ico" href="TF-logo.png" />
+    <% if(logged){ %>
+      <title>Techono Forum | <%=user.firstname%></title>
+    <% } else { %>
+      <title>Techono Forum</title>
+    <% } %>
+  </head>
+  <body style="background-color:#f1f2f4">
+  
+      <nav class="navbar navbar-expand-md mymenu navbar-light bg-white fixed-top shadow-sm">
+          <div class="container-fluid">
+              <a href="/" class="navbar-brand text-secondary"><strong>Techono Forum</strong></a>
+      
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mymenu">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-center" id="mymenu">
+                  <ul class="navbar-nav ml-auto">
+                      <% if(logged){ %>
+                        <form action="/search" method="POST" class="pr-4 pl-4">
+                          <input type="text" class="form-control" name="search" placeholder="Search..." size="90%">
+                        </form>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link text-secondary">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/question" class="nav-link text-secondary">QUESTION</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/answer" class="nav-link text-secondary">ANSWER</a>
+                        </li>
+                        <li class="#">
+                          <a href="/editprofile" class="nav-link text-secondary"><img src="/uploads/<%= user.profile_image %>" 
+                            width="25" class="rounded"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/users/logout" class="nav-link text-secondary">LOGOUT</a>
+                        </li>
+                      <% } %>
+                      <% if(!logged){ %>
+                        <li class="nav-item">
+                            <a href="/users/login" class="nav-link text-secondary">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/users/register" class="nav-link text-secondary">REGISTER</a>
+                        </li>
+                      <% } %>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      
+    <div class="container-fluid pt-4"><%- body %></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

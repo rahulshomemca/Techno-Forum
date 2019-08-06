@@ -1,0 +1,36 @@
+<div class="container pt-2">
+    <div class="row mt-5">
+        <div class="col-md-9 m-auto">
+            <div class="shadow-sm border p-4 mb-3 bg-white text-info rounded-lg">
+                <h4>Q : <%= data.question%></h4>
+                <% if(data.description.length > 0){ %>
+                    <p class="text-info pt-2">Description :</p>
+                    <div class="bg-light p-4 border text-info"><%= data.description%></div>
+                <% } %>
+                <% if(data.code.length > 0){ %>
+                    <p class="text-info pt-2">Code :</p>
+                    <pre class="bg-light p-4 border text-success"><%= data.code%></pre>
+                <% } %>
+            </div>
+            <div class="shadow-sm border p-4 mb-3 bg-white text-secondary text-center rounded-lg">
+                    You want to reply to this Question , click on Answer &nbsp;&nbsp;
+                    <a href="/answer/<%= data._id%>" class="btn btn-info">Answer</a>
+            </div>
+            <% if(typeof replies != 'undefined'){ %> 
+                <% replies.forEach(function(reply) { %>
+                    <div class="border p-4 mb-3 bg-white text-info rounded-lg">
+                        <a href="/user/<%=reply.user_id%>" class="text-secondary"> Answer by : <%= reply.user_name%></a>
+                        <% if(reply.answer.length > 0){ %>
+                            <p class="text-info pt-2">Answer :</p>
+                            <div class="bg-light p-4 border text-info"><%= reply.answer%></div>
+                        <% } %>
+                        <% if(reply.code.length > 0){ %>
+                            <p class="text-info pt-2">Code :</p>
+                            <pre class="bg-light p-4 border text-success"><%= reply.code%></pre>
+                        <% } %>
+                    </div>
+                <% }); %> 
+            <% } %>
+        </div>
+    </div>
+</div>
