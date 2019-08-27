@@ -1,4 +1,4 @@
-dbPassword = 'mongodb+srv://rahulshome:'+encodeURIComponent('9614133398')+'@mycluster-xiykr.mongodb.net/test?retryWrites=true';
+dbPassword = '**url of database***';
 username = 'rahulshomernp@gmail.com';
 password = 'xxx';
 
